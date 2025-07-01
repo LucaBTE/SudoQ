@@ -54,14 +54,10 @@ void printGrid(Grid *grid)
     for (int i = 0; i < size; i++)
     {
 
-
         if (i % 3 == 0)
         {
             printf("----------------------\n");
         }
-        
-
-
 
         for (int j = 0; j < size; j++)
         {
@@ -77,10 +73,9 @@ void printGrid(Grid *grid)
         }
 
         printf("\n");
-                if (i == size - 1)
+        if (i == size - 1)
         {
             printf("----------------------\n");
         }
-
     }
 }
