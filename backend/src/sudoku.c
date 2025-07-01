@@ -1,5 +1,7 @@
 #include "sudoku.h"
+#include "utils.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /*Initialization to 0 of every cell with malloc
 two parameters: ptr to grid struct
@@ -23,18 +25,62 @@ void initialize(Grid *grid)
     }
 }
 
-//free memory allocation of the grid struct
+// free memory allocation of the grid struct
 void freeGrid(Grid *grid)
 {
     for (int i = 0; i < grid->size; i++)
     {
-        //free memory for each row
+        // free memory for each row
         free(grid->cells[i]);
     }
-    //free memory for ptrs array 'cells'.
+    // free memory for ptrs array 'cells'.
     free(grid->cells);
 }
 
 void populate(Grid *grid)
 {
+    for (int i = 0; i < grid->size; i++)
+    {
+        for (int j = 0; j < grid->size; j++)
+        {
+            grid->cells[i][j] = pickNumber(grid->cells, i, j);
+        }
+    }
+}
+
+void printGrid(Grid *grid)
+{
+    int size = grid->size;
+    for (int i = 0; i < size; i++)
+    {
+
+
+        if (i % 3 == 0)
+        {
+            printf("----------------------\n");
+        }
+        
+
+
+
+        for (int j = 0; j < size; j++)
+        {
+            if (j % 3 == 0)
+            {
+                printf("|");
+            }
+            printf("%d ", grid->cells[i][j]);
+            if (j == size - 1)
+            {
+                printf("|");
+            }
+        }
+
+        printf("\n");
+                if (i == size - 1)
+        {
+            printf("----------------------\n");
+        }
+
+    }
 }

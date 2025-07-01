@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "sudoku.h"
+#include "game.h"
 
 int main(){
-    printf("Hello world");
+
+    newGame(9);
     return 0;
 }

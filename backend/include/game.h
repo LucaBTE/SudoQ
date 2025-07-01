@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-void newGame();
+void newGame(const int size);
 
 #endif

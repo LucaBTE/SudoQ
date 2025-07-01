@@ -22,7 +22,7 @@ typedef struct
 } Grid;
 
 void initialize(Grid *sudokuGrid);
-void populate(Grid *sudokuGrid);
 void freeGrid(Grid *grid);
-
+void populate(Grid *sudokuGrid);
+void printGrid(Grid *grid);
 #endif
